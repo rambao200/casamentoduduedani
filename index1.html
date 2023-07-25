@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <title>Página com Senha</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-image: url("C:/Users/Ewerton Calmon/Desktop/foto.png");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+        .pagina-secreta {
+            display: none;
+        }
+        .texto-maior {
+            font-size: 24px;
+        }
+        /* Adicionando estilo para o quadrado verde */
+        .destaque-verde {
+            background-color: lime;
+            padding: auto; /* Espaçamento interno para o conteúdo dentro do quadrado verde */
+            margin: auto; /* Espaçamento externo para criar uma margem entre o quadrado e o conteúdo ao redor */
+            display: inline-block; /* Torna a div um elemento de bloco com tamanho baseado no conteúdo */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Insira a Senha</h1>
+        <form onsubmit="return checkPassword()">
+            <input type="password" id="senha" />
+            <input type="submit" value="Enviar" />
+        </form>
+    </div>
+
+    <div class="container">
+        <h1>Obrigado por comprar o QRcode e ajudar os noivos</h1>
+    </div>
+
+    <div class="pagina-secreta" id="paginaSecreta">
+        <!-- Adicionando a div com o quadrado verde em torno da mensagem -->
+        <div class="destaque-verde">
+            <p class="texto-maior">Parabens !!!! Voce ganhou</p>
+        </div>
+    </div>
+
+    <script>
+        function checkPassword() {
+            var senhaInserida = document.getElementById("senha").value;
+
+            // Substitua "SENHA_CORRETA" pela senha que você deseja usar.
+            var senhaCorreta = "1";
+
+            if (senhaInserida === senhaCorreta) {
+                document.getElementById("paginaSecreta").style.display = "block";
+                return false; // Para evitar o envio do formulário
+            } else {
+                alert("Senha incorreta! Tente novamente.");
+                return false; // Para evitar o envio do formulário
+            }
+        }
+    </script>
+</body>
+</html>
